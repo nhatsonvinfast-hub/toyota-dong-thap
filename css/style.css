@@ -1024,14 +1024,14 @@ button {
 .page-hero {
   background: linear-gradient(120deg, var(--black), var(--red-dark));
   color: var(--white);
-  padding: 60px 0;
+  padding: 26px 0;
   text-align: center;
 }
 
 .page-hero .breadcrumb {
-  font-size: 13px;
+  font-size: 12px;
   color: #ffd3d6;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .page-hero .breadcrumb a {
@@ -1040,12 +1040,13 @@ button {
 }
 
 .page-hero h1 {
-  font-size: 34px;
+  font-size: 24px;
   font-weight: 800;
 }
 
 .page-hero p {
-  margin-top: 10px;
+  margin-top: 4px;
+  font-size: 14px;
   color: #e6e6e6;
 }
 
