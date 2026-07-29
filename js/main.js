@@ -80,7 +80,7 @@ function initContactForm() {
       _captcha: "false",
     };
 
-    fetch("https://formsubmit.co/ajax/nhatsontatp@gmail.com", {
+    fetch("https://formsubmit.co/ajax/toyota66dongthap@gmail.com", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -172,7 +172,7 @@ function initModelDetail() {
     const body = encodeURIComponent(
       "Chào Toyota Đồng Tháp,\n\nTôi muốn được tư vấn báo giá chi tiết cho xe " + model.name + ".\nHọ tên:\nSố điện thoại:\n\nCảm ơn."
     );
-    mailCta.href = "mailto:toyota.dongthap66@gmail.com?subject=" + subject + "&body=" + body;
+    mailCta.href = "mailto:toyota66dongthap@gmail.com?subject=" + subject + "&body=" + body;
   }
 
   [document.querySelector("#cta-testdrive"), document.querySelector("#cta-testdrive-top")].forEach((el) => {
