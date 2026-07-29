@@ -46,12 +46,14 @@ function initModelFilter() {
   });
 }
 
-// Contact / test-drive form: client-side only demo submission
+// Contact / test-drive form: submits to Gmail via FormSubmit.co (no backend needed)
 function initContactForm() {
   const form = document.querySelector("#contact-form");
   if (!form) return;
 
   const successBox = document.querySelector("#form-success");
+  const errorBox = document.querySelector("#form-error");
+  const submitBtn = form.querySelector('button[type="submit"]');
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -61,12 +63,51 @@ function initContactForm() {
       return;
     }
 
-    if (successBox) {
-      successBox.classList.add("show");
-      successBox.scrollIntoView({ behavior: "smooth", block: "center" });
+    if (errorBox) errorBox.classList.remove("show");
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Đang gửi...";
     }
 
-    form.reset();
+    const data = {
+      "Họ và tên": form.name.value,
+      "Số điện thoại": form.phone.value,
+      "Mẫu xe quan tâm": form.model.value || "Chưa chọn",
+      "Nhu cầu": form.service.options[form.service.selectedIndex].text,
+      "Lời nhắn": form.message.value || "(không có)",
+      _subject: "Yêu cầu mới từ website - " + form.name.value,
+      _template: "table",
+      _captcha: "false",
+    };
+
+    fetch("https://formsubmit.co/ajax/toyota.dongthap66@gmail.com", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then(() => {
+        if (successBox) {
+          successBox.classList.add("show");
+          successBox.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+        form.reset();
+      })
+      .catch(() => {
+        if (errorBox) {
+          errorBox.classList.add("show");
+          errorBox.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      })
+      .finally(() => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Gửi yêu cầu";
+        }
+      });
   });
 }
 

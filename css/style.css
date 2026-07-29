@@ -1020,6 +1020,22 @@ button {
   display: block;
 }
 
+.form-error {
+  display: none;
+  background: #fdeceb;
+  border: 1px solid #f3b8b3;
+  color: var(--red-dark);
+  padding: 14px 18px;
+  border-radius: 6px;
+  font-size: 14.5px;
+  margin-top: 16px;
+  font-weight: 600;
+}
+
+.form-error.show {
+  display: block;
+}
+
 /* ===== Page hero (inner pages) ===== */
 .page-hero {
   background: linear-gradient(120deg, var(--black), var(--red-dark));
