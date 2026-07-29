@@ -21,6 +21,8 @@ const COLOR_HEX = {
 const MODELS = {
   "wigo": {
     name: "Toyota Wigo",
+    filterCategory: "hatchback",
+    badge: "Tiết kiệm",
     category: "Hatchback hạng A",
     hero: "images/cars/wigo.jpg",
     intro:
@@ -54,6 +56,8 @@ const MODELS = {
   },
   "vios": {
     name: "Toyota Vios",
+    filterCategory: "sedan",
+    badge: "Bán chạy nhất",
     category: "Sedan hạng B",
     hero: "images/cars/vios.webp",
     intro:
@@ -87,6 +91,8 @@ const MODELS = {
   },
   "veloz-cross": {
     name: "Toyota Veloz Cross",
+    filterCategory: "mpv",
+    badge: "7 chỗ",
     category: "MPV gia đình",
     hero: "images/cars/veloz-cross.webp",
     intro:
@@ -118,6 +124,8 @@ const MODELS = {
   },
   "avanza-premio": {
     name: "Toyota Avanza Premio",
+    filterCategory: "mpv",
+    badge: "Tiết kiệm",
     category: "MPV 7 chỗ",
     hero: "images/cars/avanza-premio.jpg",
     intro:
@@ -150,6 +158,8 @@ const MODELS = {
   },
   "yaris-cross": {
     name: "Toyota Yaris Cross",
+    filterCategory: "suv",
+    badge: "Hybrid",
     category: "SUV hạng B",
     hero: "images/cars/yaris-cross.webp",
     intro:
@@ -181,6 +191,8 @@ const MODELS = {
   },
   "corolla-altis": {
     name: "Toyota Corolla Altis",
+    filterCategory: "sedan",
+    badge: "Sang trọng",
     category: "Sedan hạng C",
     hero: "images/cars/corolla-altis.jpg",
     intro:
@@ -221,6 +233,8 @@ const MODELS = {
   },
   "corolla-cross": {
     name: "Toyota Corolla Cross",
+    filterCategory: "suv",
+    badge: "SUV đô thị",
     category: "SUV/CUV hạng C",
     hero: "images/cars/corolla-cross.webp",
     intro:
@@ -254,6 +268,8 @@ const MODELS = {
   },
   "camry": {
     name: "Toyota Camry",
+    filterCategory: "sedan",
+    badge: "Cao cấp",
     category: "Sedan hạng D",
     hero: "images/cars/camry.jpg",
     intro:
@@ -293,6 +309,8 @@ const MODELS = {
   },
   "innova-cross": {
     name: "Toyota Innova Cross",
+    filterCategory: "mpv",
+    badge: "Hybrid",
     category: "MPV cao cấp",
     hero: "images/cars/innova-cross.webp",
     intro:
@@ -325,6 +343,8 @@ const MODELS = {
   },
   "fortuner": {
     name: "Toyota Fortuner",
+    filterCategory: "suv",
+    badge: "Off-road",
     category: "SUV 7 chỗ",
     hero: "images/cars/fortuner.jpg",
     intro:
@@ -361,6 +381,8 @@ const MODELS = {
   },
   "hilux": {
     name: "Toyota Hilux",
+    filterCategory: "pickup",
+    badge: "Bán tải",
     category: "Bán tải đa dụng",
     hero: "images/cars/hilux.webp",
     intro:
@@ -393,6 +415,8 @@ const MODELS = {
   },
   "raize": {
     name: "Toyota Raize",
+    filterCategory: "suv",
+    badge: "SUV cỡ nhỏ",
     category: "SUV/CUV đô thị 5 chỗ",
     hero: "images/cars/raize.jpg",
     intro:

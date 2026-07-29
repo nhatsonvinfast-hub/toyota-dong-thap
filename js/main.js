@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initModelDetail();
   initTestDrivePrefill();
   initHeroCarousel();
+  initProGrid();
 });
 
 // Mobile nav toggle
@@ -146,6 +147,97 @@ function initFabMenu() {
 
 function formatVnd(amount) {
   return amount.toLocaleString("vi-VN") + " ₫";
+}
+
+// Product-style listing grid (xe.html) — renders all models from js/models-data.js
+// with category tabs and the full trim/price list under each card.
+const PRO_TABS = [
+  { key: "all", label: "Tất cả" },
+  { key: "hybrid", label: "Hybrid" },
+  { key: "suv", label: "SUV" },
+  { key: "sedan", label: "Sedan" },
+  { key: "mpv", label: "Đa dụng" },
+  { key: "pickup", label: "Bán tải" },
+  { key: "hatchback", label: "Hatchback" },
+];
+
+function isHybridModel(model) {
+  return (model.trims || []).some((t) => /hev|hybrid/i.test(t.name));
+}
+
+function initProGrid() {
+  const grid = document.querySelector("#pro-grid");
+  const tabsBox = document.querySelector("#category-tabs");
+  if (!grid || typeof MODELS === "undefined") return;
+
+  const slugs = Object.keys(MODELS);
+
+  function cardHtml(slug) {
+    const m = MODELS[slug];
+    const minPrice = (m.trims || []).reduce((min, t) => (t.price < min ? t.price : min), Infinity);
+    const trimRows = (m.trims || [])
+      .map((t) => '<div class="pro-trim-row"><span>' + t.name + "</span><span>" + formatVnd(t.price) + "</span></div>")
+      .join("");
+
+    return (
+      '<article class="pro-card" data-category="' +
+      m.filterCategory +
+      '" data-hybrid="' +
+      isHybridModel(m) +
+      '">' +
+      (m.badge ? '<span class="pro-badge">' + m.badge + "</span><br/>" : "") +
+      '<a href="xe-chi-tiet.html?xe=' +
+      slug +
+      '" class="pro-img"><img src="' +
+      m.hero +
+      '" alt="' +
+      m.name +
+      '" loading="lazy" /></a>' +
+      "<h3><a href=\"xe-chi-tiet.html?xe=" +
+      slug +
+      '">' +
+      m.name +
+      "</a></h3>" +
+      '<div class="pro-from">Chỉ từ <strong>' +
+      formatVnd(minPrice) +
+      "</strong></div>" +
+      '<div class="pro-trims">' +
+      trimRows +
+      "</div>" +
+      '<div class="pro-actions">' +
+      '<a href="xe-chi-tiet.html?xe=' +
+      slug +
+      '" class="pa1">Xem chi tiết</a>' +
+      '<a href="lien-he.html?xe=' +
+      slug +
+      '" class="pa2">Lái thử</a>' +
+      "</div>" +
+      "</article>"
+    );
+  }
+
+  grid.innerHTML = slugs.map(cardHtml).join("");
+
+  if (tabsBox) {
+    tabsBox.innerHTML = PRO_TABS.map(
+      (t, i) => '<button data-tab="' + t.key + '"' + (i === 0 ? ' class="active"' : "") + ">" + t.label + "</button>"
+    ).join("");
+
+    const cards = grid.querySelectorAll(".pro-card");
+    tabsBox.querySelectorAll("button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        tabsBox.querySelectorAll("button").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const key = btn.getAttribute("data-tab");
+        cards.forEach((card) => {
+          const show =
+            key === "all" ||
+            (key === "hybrid" ? card.getAttribute("data-hybrid") === "true" : card.getAttribute("data-category") === key);
+          card.style.display = show ? "" : "none";
+        });
+      });
+    });
+  }
 }
 
 // Model detail page (xe-chi-tiet.html?xe=<slug>) — reads js/models-data.js

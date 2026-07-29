@@ -1066,6 +1066,193 @@ button {
   color: #e6e6e6;
 }
 
+/* ===== Category tabs (Toyota-style flat tabs) ===== */
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  border-bottom: 1px solid var(--border);
+  margin: 30px 0 40px;
+  flex-wrap: wrap;
+  row-gap: 4px;
+}
+
+.category-tabs button {
+  background: none;
+  font-weight: 700;
+  font-size: 13.5px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--dark-gray);
+  padding: 0 0 14px;
+  border-bottom: 3px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+  white-space: nowrap;
+}
+
+.category-tabs button:hover {
+  color: var(--red);
+}
+
+.category-tabs button.active {
+  color: var(--red);
+  border-bottom-color: var(--red);
+}
+
+/* ===== Product-style model grid (Toyota.com.vn inspired) ===== */
+.pro-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px 22px;
+}
+
+.pro-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 18px 16px 20px;
+  text-align: left;
+  position: relative;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.pro-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.pro-card .pro-promo-tag {
+  color: var(--red);
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.pro-card .pro-img {
+  display: block;
+  background: var(--light-gray);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 150px;
+  margin-bottom: 14px;
+}
+
+.pro-card .pro-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.pro-card:hover .pro-img img {
+  transform: scale(1.05);
+}
+
+.pro-card .pro-badge {
+  display: inline-block;
+  background: var(--red);
+  color: var(--white);
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.pro-card h3 {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  margin-bottom: 2px;
+}
+
+.pro-card h3 a:hover {
+  color: var(--red);
+}
+
+.pro-card .pro-from {
+  color: var(--gray);
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.pro-card .pro-from strong {
+  color: var(--black);
+  font-weight: 800;
+}
+
+.pro-card .pro-trims {
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+  margin-bottom: 14px;
+}
+
+.pro-card .pro-trim-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12.5px;
+  padding: 5px 0;
+  color: var(--dark-gray);
+}
+
+.pro-card .pro-trim-row span:last-child {
+  font-weight: 700;
+  color: var(--red);
+  white-space: nowrap;
+}
+
+.pro-card .pro-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.pro-card .pro-actions a {
+  flex: 1;
+  text-align: center;
+  padding: 9px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 12.5px;
+}
+
+.pro-card .pro-actions .pa1 {
+  background: var(--black);
+  color: var(--white);
+}
+
+.pro-card .pro-actions .pa1:hover {
+  background: var(--red);
+}
+
+.pro-card .pro-actions .pa2 {
+  background: var(--light-gray);
+  color: var(--black);
+}
+
+.pro-card .pro-actions .pa2:hover {
+  background: #e3e3e3;
+}
+
+@media (max-width: 992px) {
+  .pro-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .pro-grid {
+    grid-template-columns: 1fr;
+  }
+  .category-tabs {
+    gap: 22px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+}
+
 /* ===== Filter bar (models page) ===== */
 .filter-bar {
   display: flex;
