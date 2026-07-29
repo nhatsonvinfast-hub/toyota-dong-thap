@@ -312,7 +312,7 @@ const MODELS = {
     filterCategory: "mpv",
     badge: "Hybrid",
     category: "MPV cao cấp",
-    hero: "images/cars/innova-cross.webp",
+    hero: "images/cars/innova-cross.jpg",
     intro:
       "Toyota Innova Cross là mẫu MPV lai SUV thế hệ mới, nhập khẩu từ Indonesia, mang dáng vẻ thể thao của SUV kết hợp không gian rộng rãi của MPV. Xe có phiên bản 8 chỗ (xăng) hoặc 7 chỗ (Hybrid), phù hợp cho gia đình đông thành viên và dịch vụ vận chuyển cao cấp.",
     specs: [
@@ -384,7 +384,7 @@ const MODELS = {
     filterCategory: "pickup",
     badge: "Bán tải",
     category: "Bán tải đa dụng",
-    hero: "images/cars/hilux.webp",
+    hero: "images/cars/hilux.jpg",
     intro:
       "Toyota Hilux là mẫu bán tải với ngoại hình được thiết kế lại hoàn toàn, nhập khẩu từ Thái Lan, cấu hình 5 chỗ ngồi qua 3 phiên bản. Xe phù hợp cho khách hàng cần một chiếc bán tải đa dụng vừa chở hàng vừa di chuyển gia đình, có khả năng off-road tốt.",
     specs: [
@@ -447,5 +447,67 @@ const MODELS = {
     ],
     colors: [],
     note: "Màu sắc gắn theo phiên bản 1 Tone / 2 Tone / Trắng Ngọc Trai.",
+  },
+  "land-cruiser": {
+    name: "Toyota Land Cruiser",
+    filterCategory: "suv",
+    badge: "Hạng sang",
+    category: "SUV hạng sang",
+    hero: "images/cars/land-cruiser.jpg",
+    intro:
+      "Toyota Land Cruiser là mẫu SUV khung gầm rời hạng sang, biểu tượng off-road bền bỉ của Toyota, nhập khẩu nguyên chiếc từ Nhật Bản. Xe hướng đến khách hàng cao cấp cần một chiếc SUV 7 chỗ vừa sang trọng, vừa có khả năng vận hành vượt trội trên mọi địa hình.",
+    specs: [
+      { label: "Động cơ", value: "3.5L V6 Twin-Turbo" },
+      { label: "Công suất", value: "409 mã lực" },
+      { label: "Hộp số", value: "Tự động 10 cấp" },
+      { label: "Dẫn động", value: "4x4 full-time" },
+      { label: "Số chỗ ngồi", value: "7" },
+      { label: "Phân khúc", value: "SUV hạng sang" },
+      { label: "Màn hình", value: "12,3 inch" },
+    ],
+    features: [
+      "Khung gầm rời TNGA-F cứng vững, hệ dẫn động 4x4 full-time với Crawl Control và Multi-Terrain Select",
+      "Nội thất bọc da cao cấp, hàng ghế 2 kiểu Captain (tùy phiên bản)",
+      "Màn hình giải trí 12,3 inch, dàn âm thanh JBL 14 loa",
+      "Cụm đèn LED thích ứng, mâm hợp kim cỡ lớn",
+      "Gói an toàn Toyota Safety Sense 3.0 đầy đủ: kiểm soát hành trình chủ động, cảnh báo tiền va chạm, hỗ trợ giữ làn",
+      "Khả năng off-road vượt trội, lội nước sâu, phù hợp cả đường trường lẫn địa hình khó",
+    ],
+    trims: [
+      { name: "Land Cruiser 300", price: 4580000000 },
+      { name: "Land Cruiser 300 (Trắng Ngọc Trai)", price: 4600000000 },
+    ],
+    colors: ["Bạc", "Đen", "Trắng Ngọc Trai", "Xám", "Đồng", "Xanh"],
+    note: "",
+  },
+  "alphard": {
+    name: "Toyota Alphard",
+    filterCategory: "mpv",
+    badge: "Cao cấp",
+    category: "MPV cao cấp",
+    hero: "images/cars/alphard.jpg",
+    intro:
+      "Toyota Alphard là mẫu MPV phổ thông cao cấp nhất thị trường Việt Nam, nhập khẩu nguyên chiếc từ Nhật Bản, có cả phiên bản xăng và Hybrid. Xe hướng đến khách hàng doanh nhân, gia đình cần một không gian di chuyển sang trọng, riêng tư và êm ái bậc nhất phân khúc.",
+    specs: [
+      { label: "Động cơ", value: "2.5L xăng / 2.5L Hybrid (HEV)" },
+      { label: "Dẫn động", value: "FWD (cầu trước)" },
+      { label: "Số chỗ ngồi", value: "7" },
+      { label: "Phân khúc", value: "MPV cao cấp" },
+      { label: "Xuất xứ", value: "Nhập khẩu Nhật Bản" },
+    ],
+    features: [
+      "Cửa trượt điện hai bên, cửa cốp điện, ghế thương gia Ottoman hàng 2 ngả sâu có gác chân điện",
+      "Nội thất cách âm cao cấp, trần cao rộng rãi, đèn nội thất ambient",
+      "Màn hình giải trí lớn, dàn âm thanh JBL, điều hòa tự động độc lập nhiều vùng",
+      "Cụm đèn LED đặc trưng phía trước, lưới tản nhiệt mạ chrome sang trọng",
+      "Toyota Safety Sense đầy đủ, camera 360 độ, hỗ trợ đỗ xe thông minh",
+      "Phiên bản Hybrid vận hành êm ái, tiết kiệm nhiên liệu vượt trội",
+    ],
+    trims: [
+      { name: "Alphard 2.5Q (Xăng)", price: 4510000000 },
+      { name: "Alphard HEV (Hybrid)", price: 4615000000 },
+    ],
+    colors: ["Đen", "Trắng Ngọc Trai", "Nâu vàng ánh kim"],
+    note: "Màu Trắng Ngọc Trai và Nâu vàng ánh kim phụ thu thêm 20.000.000₫.",
   },
 };
