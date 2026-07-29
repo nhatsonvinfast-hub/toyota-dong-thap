@@ -80,6 +80,21 @@ function initContactForm() {
       _captcha: "false",
     };
 
+    // Fire-and-forget: also log the lead into Google Sheets via Apps Script.
+    // no-cors means we can't read the response, but the sheet still gets the row.
+    fetch("https://script.google.com/macros/s/AKfycbybC8xNSGxuZVjUuoqyfBv-y21stp88ubxiD1MuCpehQjLzScDkRdAYswR5yc3YFjscZA/exec", {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify({
+        name: form.name.value,
+        phone: form.phone.value,
+        model: form.model.value || "Chưa chọn",
+        service: form.service.options[form.service.selectedIndex].text,
+        message: form.message.value || "",
+      }),
+    }).catch(() => {});
+
     fetch("https://formsubmit.co/ajax/toyota66dongthap@gmail.com", {
       method: "POST",
       headers: {
