@@ -80,7 +80,7 @@ function initContactForm() {
       _captcha: "false",
     };
 
-    fetch("https://formsubmit.co/ajax/toyota.dongthap66@gmail.com", {
+    fetch("https://formsubmit.co/ajax/nhatsontatp@gmail.com", {
       method: "POST",
       headers: {
         Accept: "application/json",
